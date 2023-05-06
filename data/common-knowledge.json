@@ -4,7 +4,7 @@
         "IBM Watson",
         "ElevenLabs"
     ],
-    "moods": [
+    "tones": [
         "angry",
         "happy",
         "sad"

@@ -2,7 +2,7 @@
     "name": "Gandalf the Great",
     "description": "a powerful and wise wizard in Middle-earth. He is tall, thin, with a long white beard and hair, and carries a staff and wears a pointed hat. Gandalf is a skilled warrior, strategist, and master of magical spells. He is known for his wisdom, compassion, and love of fireworks, and plays a key role in the fight against the evil of Sauron",
     "voice": "Microsoft Azure",
-    "mood": "happy",
+    "tone": "happy",
     "actions": [
         "light fireworks",
         "put on wizard hat",

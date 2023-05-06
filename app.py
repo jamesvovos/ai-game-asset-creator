@@ -18,22 +18,23 @@ from langchain.memory import ConversationBufferMemory
 
 # get ChatGPT API key from .env file
 load_dotenv()
-API_KEY = os.getenv("OPENAI_API_KEY")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+STABLEDIFUSSION_API_KEY = os.getenv("STABLEDIFUSSION_API_KEY")
 
 # load JSON data
 # load the common knowledge training data from JSON file
-with open('common-knowledge.json', 'r') as f:
+with open('data/common-knowledge.json', 'r') as f:
     common_knowledge = json.load(f)
 
 # load the characters data from JSON file
-with open('characters.json', 'r') as f:
+with open('data/characters.json', 'r') as f:
     characters = json.load(f)
 
 
 # prompt templates
 character_backstory_template = PromptTemplate(
-    input_variables=["name", "description", "mood"],
-    template="you are now a fictional character named {name}, based on this character description: {description}. Tell me about your plan for the day in the following tone: {mood}. Keep it short just a sentence or two.",
+    input_variables=["name", "description", "tone"],
+    template="you are now a fictional character named {name}, based on this character description: {description}. Tell me about your plan for the day in the following tone: {tone}. Keep it short just a sentence or two.",
 )
 
 actions_template = PromptTemplate(
@@ -80,18 +81,18 @@ items_chain = LLMChain(
 
 
 # create NPC character
-def create_character(name: str, description: str, voice: str, mood: str, knowledge: list[str], actions: list[str], hobbies: list[str]):
-    if name != "" and description != "" and voice != "" and mood != "" and knowledge != [] and actions != [] and hobbies != []:
+def create_character(name: str, description: str, voice: str, tone: str, knowledge: list[str], actions: list[str], hobbies: list[str]):
+    if name != "" and description != "" and voice != "" and tone != "" and knowledge != [] and actions != [] and hobbies != []:
         characters['name'] = name
         characters['description'] = description
         characters['voice'] = voice
-        characters['mood'] = mood
+        characters['tone'] = tone
         characters['knowledge'] = knowledge
         characters['actions'] = actions
         characters['hobbies'] = hobbies
 
         # Write the updated data back to the character file
-        with open('characters.json', 'w') as f:
+        with open('data/characters.json', 'w') as f:
             json.dump(characters, f, indent=4)
         st.info('Character created successfully.')
     
@@ -103,7 +104,7 @@ def create_character(name: str, description: str, voice: str, mood: str, knowled
 def display_spinner():
     with st.spinner(text='Creating NPC character...'):
         time.sleep(2)
-        create_character(name, description, voice, mood, knowledge, actions, hobbies)
+        create_character(name, description, voice, tone, knowledge, actions, hobbies)
 
 
 # get message response from AI character
@@ -111,11 +112,11 @@ def get_response():
     # get required character data from JSON file
     name = characters['name']
     description = characters['description']
-    mood = characters['mood']
+    tone = characters['tone']
     # chain the data together in sequential order
-    sequential_chain = SequentialChain(chains=[character_backstory_chain, actions_chain, items_chain], verbose=True, input_variables=["name", "description", "mood"], output_variables=["plan", "actions", "items"])
+    sequential_chain = SequentialChain(chains=[character_backstory_chain, actions_chain, items_chain], verbose=True, input_variables=["name", "description", "tone"], output_variables=["plan", "actions", "items"])
     # render to screen
-    response = sequential_chain({'name': name, 'description': description, 'mood': mood})
+    response = sequential_chain({'name': name, 'description': description, 'tone': tone})
     with st.expander("Plan:"):
         st.info(response['plan'])
 
@@ -139,10 +140,10 @@ description = st.text_area("Enter character description", placeholder="a powerfu
 voice = st.selectbox("Voice", [str(voice) for voice in common_knowledge['voices']])
 col1, col2 = st.columns(2)
 with col1:
-    mood = st.selectbox("Mood", [str(mood) for mood in common_knowledge['moods']]) 
+    tone = st.selectbox("Tone", [str(tone) for tone in common_knowledge['tones']]) 
 
 with col2:
-    st.slider("Mood Scale", 0, 100)
+    st.slider("Tone Scale", 0, 100)
 
 knowledge = st.multiselect('Knowledge', [str(knowledge) for knowledge in common_knowledge['knowledge']])
 
