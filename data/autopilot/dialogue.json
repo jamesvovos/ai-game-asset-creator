@@ -1,0 +1,30 @@
+{
+    "Erisa": [
+        {
+            "player_dialogue": "What can you tell me about the dark mages?",
+            "erisa_dialogue": "The dark mages have been using a powerful spell to drain the energy from the river. They're getting stronger every day, and the only way to stop them is to destroy the source of their power - an ancient crystal that's hidden deep in the forest."
+        },
+        {
+            "player_dialogue": "Why can't you break through the magic protecting the crystal?",
+            "erisa_dialogue": "I've tried, but the magic is too powerful for me to overcome alone. I need your help to find a way to break the spell and destroy the crystal."
+        },
+        {
+            "player_dialogue": "What do you need me to do?",
+            "erisa_dialogue": "You'll need to venture deep into the forest, facing off against dangerous creatures and dark magic. Once you've located the crystal, you'll need to find a way to break through its powerful magic and destroy it before the dark mages can use it to destroy the village."
+        }
+    ],
+    "Thorne": [
+        {
+            "player_dialogue": "What can you tell me about the dark mages?",
+            "thorne_dialogue": "The dark mages have been attacking the village, and they're getting stronger every day. We need to stop them before they destroy everything we've worked to build."
+        },
+        {
+            "player_dialogue": "What do you think we should do?",
+            "thorne_dialogue": "We need to find their source of power and destroy it. I'm willing to lend my skills as a blacksmith to help you on this mission."
+        },
+        {
+            "player_dialogue": "What kind of dangers do we face in the forest?",
+            "thorne_dialogue": "The forest is full of dangerous creatures, and the dark mages will stop at nothing to protect their source of power. But with my weapons and your skills, I'm confident we can overcome any obstacle. Let's do this!"
+        }
+    ]
+}

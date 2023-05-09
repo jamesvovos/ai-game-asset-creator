@@ -1,0 +1,22 @@
+{
+    "types": [
+        "spritesheet",
+        "8k octane render"
+    ],
+    "styles": [
+        "rayman legends",
+        "vaporwave",
+        "cartoon",
+        "urban",
+        "pixel",
+        "sci-fi",
+        "cyberpunk",
+        "synthwave",
+        "pixel art",
+        "illustration"
+    ],
+    "descriptors": [
+        "containing blue liquid",
+        "rpg based game"
+    ]
+}
