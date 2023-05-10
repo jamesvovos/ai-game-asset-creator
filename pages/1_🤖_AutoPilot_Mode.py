@@ -4,7 +4,7 @@ import streamlit as st
 from components.pipelines.autopilot import AutoPilotPipeline
 
 # NOTE: Asset filepaths
-assets_filepath = "./data/autopilot/autopilot.json"
+assets_filepath = "./data/autopilot/data.json"
 dialogue_tree_filepath ="./data/autopilot/dialogue.json"
 enchanted_sword_filepath ="./assets/images/enchanted-sword.png"
 magic_amulet_filepath ="./assets/images/magic-amulet.png"
@@ -46,7 +46,7 @@ def display_spinner():
 # Web App UI
 st.title("🤖AutoPilot Mode✈️")
 # Insert containers separated into tabs:
-create_tab, data_tab, dialogue_tab, game_art_tab = st.tabs(["Create Assets", "AI Model Output", "Dialogue Trees", "Game Concept Art"])
+create_tab, data_tab, dialogue_tab, game_art_tab = st.tabs(["🎮Create Assets", "🤖AI Model Output", "💬Dialogue Trees", "🖍️Game Concept Art"])
 with create_tab:
     st.subheader("Auto Create Game Assets:")
 

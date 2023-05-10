@@ -24,4 +24,4 @@ class Pipeline(ABC):
     def display_message(self):
         # Display success message once completed.
         st.info('Game assets created successfully.')
-        st.balloons()
+        st.snow()

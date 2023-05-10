@@ -1,0 +1,16 @@
+{
+    "voices": [
+        "Microsoft Azure",
+        "IBM Watson",
+        "ElevenLabs"
+    ],
+    "tones": [
+        "enthusiastic",
+        "wise",
+        "angry",
+        "happy",
+        "sad",
+        "shy",
+        "terrified"
+    ]
+}

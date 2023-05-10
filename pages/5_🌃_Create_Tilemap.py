@@ -5,7 +5,7 @@ from components.midjourney.prompts import TileMapPrompt
 
 
 # Load the common knowledge training data from JSON file
-with open('./data/tilemaps/tilemaps.json', 'r') as f:
+with open('./data/tilemap/data.json', 'r') as f:
     tilemaps = json.load(f)
 
 def show_midjourney_prompt():

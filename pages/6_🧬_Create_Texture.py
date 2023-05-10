@@ -5,7 +5,7 @@ from components.midjourney.prompts import TexturePrompt
 
 
 # Load the common knowledge training data from JSON file
-with open('./data/textures/textures.json', 'r') as f:
+with open('./data/texture/data.json', 'r') as f:
     textures = json.load(f)
 
 def show_midjourney_prompt():
@@ -23,7 +23,7 @@ def display_spinner():
 # Web App UI
 st.title("🧬Texture Creator🧵")
 # Insert containers separated into tabs:
-create_tab, view_tab = st.tabs(["Create Texture", "View Texture Assets"])
+create_tab, view_tab = st.tabs(["Create Texture", "View Textures"])
 with create_tab:
     st.subheader("Create Texture Game Asset:")
     item = st.selectbox("Item to be textured:", [str(item) for item in textures['items']])

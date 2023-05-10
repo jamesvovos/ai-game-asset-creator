@@ -11,7 +11,7 @@ from langchain.chains import LLMChain, SequentialChain
 # https://github.com/gagan3012/streamlit-tags
 
 # load the common knowledge training data from JSON file
-with open('./data/items/items.json', 'r') as f:
+with open('./data/item/data.json', 'r') as f:
     game_assets = json.load(f)
 
 # web app functions
@@ -22,7 +22,7 @@ def display_spinner():
 # web app UI
 st.title("💎Item Creator⚔️")
 # Insert containers separated into tabs:
-create_tab, view_tab = st.tabs(["Create Item", "View Items"])
+create_tab, view_tab = st.tabs(["⚗️Create Item", "💎View Items"])
 with create_tab:
     st.subheader("Create Item Game Asset:")
     object = st.text_input("Item object:", placeholder="For example: magical potion, wizards oak staff, sword, etc.")

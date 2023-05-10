@@ -1,5 +1,5 @@
 from langchain.chains import SequentialChain
-from components.langchain.chains import storyline_chain, characters_chain, backstories_chain, quests_chain, dialogue_chain, items_chain, item_descriptions_chain, dialogue_tree_chain
+from components.chains.autopilot.chains import storyline_chain, characters_chain, backstories_chain, quests_chain, dialogue_chain, items_chain, item_descriptions_chain, dialogue_tree_chain
 from components.pipelines.pipeline import Pipeline
 import json
 

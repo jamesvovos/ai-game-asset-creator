@@ -12,7 +12,7 @@ def display_spinner():
 # web app UI
 st.title("🎨Concept Art Creator🌋")
 # Insert containers separated into tabs:
-create_tab, view_tab = st.tabs(["Create Concept Art", "View Concept Art"])
+create_tab, view_tab = st.tabs(["🎨Create Concept Art", "🌳View Concept Art"])
 with create_tab:
     concept = st.text_area("Concept idea:", placeholder="For example: set in the dark caves of Teravola. The caves are looming with darkness and mystery with gems falling from the ceiling. It evokes a sense of danger and foreboding, as the player tries to escape the enemies within")
 
