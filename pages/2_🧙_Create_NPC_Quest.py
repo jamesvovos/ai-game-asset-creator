@@ -71,15 +71,15 @@ create_tab, quest_tab, = st.tabs(["🧙Create NPC Quest", "👾NPC Quest Created
 
 with create_tab:
     st.subheader("Create Quest for NPC:")
-    name = st.text_input("Enter your NPC characters name", placeholder="Gandalf the Great")
-    description = st.text_area("Enter NPC character description", placeholder="a powerful and wise wizard in Middle-earth. He is tall, thin, with a long white beard and hair, and carries a staff and wears a pointed hat. Gandalf is a skilled warrior, strategist, and master of magical spells. He is known for his wisdom, compassion, and love of fireworks, and plays a key role in the fight against the evil of Sauron")
-    voice = st.selectbox("Voice", [str(voice) for voice in ui_data['voices']])
+    name = st.text_input("Enter your NPC characters name:", placeholder="Gandalf the Great")
+    description = st.text_area("Enter NPC character description:", placeholder="a powerful and wise wizard in Middle-earth. He is tall, thin, with a long white beard and hair, and carries a staff and wears a pointed hat. Gandalf is a skilled warrior, strategist, and master of magical spells. He is known for his wisdom, compassion, and love of fireworks, and plays a key role in the fight against the evil of Sauron")
+    voice = st.selectbox("Voice:", [str(voice) for voice in ui_data['voices']])
     col1, col2 = st.columns(2)
     with col1:
-        tone = st.selectbox("Tone", [str(tone) for tone in ui_data['tones']]) 
+        tone = st.selectbox("Tone:", [str(tone) for tone in ui_data['tones']]) 
 
     with col2:
-        st.slider("Tone Scale", 0, 100, st.session_state['tone_modifer'])
+        st.slider("Tone Scale:", 0, 100, st.session_state['tone_modifer'])
 
     st.button(label="Create Quest", on_click=display_spinner)
 

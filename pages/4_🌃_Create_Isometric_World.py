@@ -46,7 +46,7 @@ def create_isometric_world():
 # Web App UI
 st.title("🌃Isometric World Creator🌏")
 # Insert containers separated into tabs:
-create_tab, view_tab = st.tabs(["Create Isometric World", "View Isometric Worlds"])
+create_tab, view_tab = st.tabs(["🌃Create Isometric World", "🌏View Isometric Worlds"])
 with create_tab:
     st.subheader("Create Isometric World Game Asset:")
     location = st.text_input("Isometric world location:", placeholder="For example: dark cave, dark forest, beach island, snowy cabins, etc")
@@ -60,7 +60,7 @@ with create_tab:
         maxtags = 5,
         key='descriptortags')
 
-    st.button(label="Create Item", on_click=create_isometric_world)
+    st.button(label="Create Isometric World", on_click=create_isometric_world)
 
 with view_tab:
     # API call here later to retrieve images from database

@@ -45,7 +45,7 @@ def create_texture():
 # Web App UI
 st.title("🧶Texture Creator🧵")
 # Insert containers separated into tabs:
-create_tab, view_tab = st.tabs(["Create Texture", "View Textures"])
+create_tab, view_tab = st.tabs(["🧶Create Texture", "🧵View Textures"])
 with create_tab:
     st.subheader("Create Texture Game Asset:")
     item = st.selectbox("Item to be textured:", [str(item) for item in ui['items']])
