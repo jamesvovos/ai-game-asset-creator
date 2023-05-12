@@ -11,7 +11,7 @@ from components.pipelines.npc_quest import NpcQuestPipeline
 
 
 # NOTE: Asset filepaths
-character_data_filepath = "./data/npc_quest/data.json"
+npc_quest_data_filepath = "./data/npc_quest/data.json"
 ui_data_filepath ="./data/npc_quest/ui.json"
 
 # Load the NPC UI Creator Data from JSON file
@@ -19,7 +19,7 @@ with open(ui_data_filepath, 'r') as f:
     ui_data = json.load(f)
 
 # Load the character data from JSON file
-with open(character_data_filepath, 'r') as f:
+with open(npc_quest_data_filepath, 'r') as f:
     character = json.load(f)
 
 # memory
@@ -35,10 +35,10 @@ def create_character(name: str, description: str, voice: str, tone: str):
         character['tone'] = tone
 
         # Write the updated data back to the character file
-        with open(character_data_filepath, 'w') as f:
+        with open(npc_quest_data_filepath, 'w') as f:
             json.dump(character, f, indent=4)
         # Run the pipeline
-        pipeline = NpcQuestPipeline(character, character_data_filepath)
+        pipeline = NpcQuestPipeline(character, npc_quest_data_filepath)
         pipeline.run()
     
     else:
