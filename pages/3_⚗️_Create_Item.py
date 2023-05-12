@@ -8,9 +8,6 @@ from components.leonardo.endpoints import generate_image
 # pip install streemlit-tags
 # https://github.com/gagan3012/streamlit-tags
 
-# add session state streamlit
-# https://www.youtube.com/watch?v=92jUAXBmZyU
-
 # NOTE: Filepaths
 items_data_path = "./data/items/data.json"
 ui_data_path ="./data/items/ui.json"
@@ -22,12 +19,6 @@ with open(ui_data_path, 'r') as f:
 # load the Items data from JSON file
 with open(items_data_path, 'r') as f:
     items = json.load(f)
-
-# NOTE: Debug session state variables:
-# "st.session_state object:", st.session_state
-
-if 'image_url' not in st.session_state:
-    st.session_state['image_url'] = None
 
 
 # Create Item Asset
@@ -52,9 +43,6 @@ def create_item():
         # Write the updated data back to the Items data file
         with open(items_data_path, 'w') as f:
             json.dump(items, f, indent=4)
-
-        # # Update the session state cache
-        # st.session_state['image_url'] = image_url
 
 
 

@@ -50,5 +50,9 @@
     {
         "name": "shield",
         "url": "https://cdn.leonardo.ai/users/6dc04c37-29b7-482f-8517-47f058d4e6f9/generations/cf56f7e5-0d7a-4cfe-ac29-9ef73bb2dc74/Leonardo_Diffusion_shield_lion_head_ultra_realistic_blue_gems_0.jpg"
+    },
+    {
+        "name": "blue wolf shield",
+        "url": "https://cdn.leonardo.ai/users/6dc04c37-29b7-482f-8517-47f058d4e6f9/generations/4d0a6d1b-c60f-4b43-af15-0d3a456cc7bc/Leonardo_Diffusion_shield_wolf_face_blue_gems_viking_markings_0.jpg"
     }
 ]

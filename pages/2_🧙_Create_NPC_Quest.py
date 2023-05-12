@@ -9,6 +9,9 @@ from components.pipelines.npc_quest import NpcQuestPipeline
 # https://www.youtube.com/watch?v=MlK6SIjcjE8&t
 # https://www.youtube.com/watch?v=G0ltc9C6KOU
 
+# add session state streamlit
+# https://www.youtube.com/watch?v=92jUAXBmZyU
+
 
 # NOTE: Asset filepaths
 npc_quest_data_filepath = "./data/npc_quest/data.json"
@@ -21,6 +24,11 @@ with open(ui_data_filepath, 'r') as f:
 # Load the character data from JSON file
 with open(npc_quest_data_filepath, 'r') as f:
     character = json.load(f)
+
+# NOTE: Debug session state variables:
+# "st.session_state object:", st.session_state
+if 'tone_modifer' not in st.session_state:
+    st.session_state['tone_modifer'] = 45
 
 # memory
 # memory = ConversationBufferMemory(input_key="response", memory_key="chat_history")
@@ -71,7 +79,7 @@ with create_tab:
         tone = st.selectbox("Tone", [str(tone) for tone in ui_data['tones']]) 
 
     with col2:
-        st.slider("Tone Scale", 0, 100)
+        st.slider("Tone Scale", 0, 100, st.session_state['tone_modifer'])
 
     st.button(label="Create Quest", on_click=display_spinner)
 
