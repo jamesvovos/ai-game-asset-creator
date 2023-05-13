@@ -13,7 +13,7 @@ from components.pipelines.npc_quest import NpcQuestPipeline
 # https://www.youtube.com/watch?v=92jUAXBmZyU
 
 
-# NOTE: Asset filepaths
+# NOTE: Filepaths
 npc_quest_data_filepath = "./data/npc_quest/data.json"
 ui_data_filepath ="./data/npc_quest/ui.json"
 
@@ -85,20 +85,24 @@ with create_tab:
 
 with quest_tab:
     st.subheader("NPC Character Quest:")
-    # load assets created to UI
+    # Load assets created to UI
     with st.expander("Quest Starter Dialogue:"):
         st.info(character['quest'])
-        st.audio('./assets/audio/wizard.mp3')
+        st.audio('./assets/audio/gandalf.mp3')
     
     with st.expander("Quest Dialogue Tree:"):
         st.info(character['dialogue'])
     
     with st.expander("Quest Objectives:"):
-        st.info(character['objectives'])
+        for obj in character['objectives']:
+            st.info(obj)
 
     with st.expander("Quest Items:"):
-        st.info(character['items'])
+        for item in character['items']:
+            st.info(item)
 
-    with st.expander("Quest Item Descriptions:"):
-        st.info(character['items_details'])
+    with st.expander("Quest Item Details:"):
+        for item in character['items_details']:
+            # Loop through the Item assets created and render the Images for them.
+            st.image(item['url'], caption=item['description'], use_column_width=True)
 
