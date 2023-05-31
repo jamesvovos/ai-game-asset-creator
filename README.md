@@ -1,16 +1,17 @@
-# ChatGPT NPC Creator.
-## _Create and train NPC characters using ChatGPT - output dialogue and conversation based on what you've said._
+# AI 2D Game Asset Creator.
+## _Generate 2D Game Assets utilising artificial intelligence, natural language processing and fine-tuned text-to-image deep learning models._
 
-![DashboardImage](https://i.postimg.cc/kMRZxxPS/streamlit.png)
+![DashboardImage](https://i.postimg.cc/prD74QKy/ui.png)
 
 ## Installation Guide
 - OpenAI installation instructions [OpenAI docs](https://platform.openai.com/docs/api-reference?lang=python)
 - LangChain installation instructions [LangChain website](https://python.langchain.com/en/latest/getting_started/getting_started.html)
 - Streamlit installation instructions [Streamlit docs](https://streamlit.io/)
+- Dotenv installation instructions [Dotenv docs](https://pypi.org/project/python-dotenv/)
 
 ## 1. Install OpenAI
 
-Install FastAPI:
+Install OpenAPI:
 ```sh
 pip install openai
 ```
@@ -30,48 +31,41 @@ Install Streamlit:
 pip install streamlit
 ```
 
-## 4. Run the server
+## 4. Install Dotenv
+
+Install Dotenv:
+```sh
+pip install python-dotenv
+```
+
+## 5. Run the server
+
 CD/ into the project directory and run the command:
 ```sh
 streamlit run app.py
 ```
 
-## Sample Response:
-![SampleOutputImage](https://i.postimg.cc/HLf0H8vG/output.png)
+## Sample Responses:
+![SampleOutputImage](https://i.postimg.cc/3JxCPCX6/ui2.png)
+![SampleOutputImage2](https://i.postimg.cc/3Jk0XLCK/renders.png)
 
 ## Features
 
-- Chain together NPC character training tasks by feeding ChatGPT AI model via API and LangChain.
-- Customise AI text-to-speech responses including: tone, personality, name, voice, etc.
-- Export NPC character to game engines such as Unity or UE5, have text-to-text or speech-to-text conversations with them.
+- Chain together LLM generated output via pipeline architecture in order to create 2D game assets such as quests, items, storyline, character dialogue, etc.
+- Customise and fine-tune deeplearning text-to-image models to suit sylistic preferences.
+- Export 2D generated assets created by simple prompts.
 
 
-## Customize
-Modify the `characters.json` file to change attributes such as `name`, `description`, `voice`, `mood`, `actions`, `knowledge` and `hobbies` for your NPC character.
+## .env 
+Create a `.env` file in the root project directory. Add the following variables with their relevant API keys: `OPENAI_API_KEY`, `LEONARDO_AI_API_KEY`, `LEONARDO_AI_USER_ID`.
+Refer to Leonardo AI's API documentation https://docs.leonardo.ai/reference
 NOTE: WIP - Creating database & API to store data.
 
 ```sh
-{
-    "name": "Gandalf the Great",
-    "description": "a powerful and wise wizard in Middle-earth. He is tall, thin, with a long white beard and hair, and carries a staff and wears a pointed hat. Gandalf is a skilled warrior, strategist, and master of magical spells. He is known for his wisdom, compassion, and love of fireworks, and plays a key role in the fight against the evil of Sauron",
-    "voice": "Microsoft Azure",
-    "mood": "happy",
-    "actions": [
-        "light fireworks",
-        "put on wizard hat",
-        "shout full of a took!"
-    ],
-    "knowledge": [
-        "has an evil enemy named Sauron, that he despises",
-        "needs help defeating a dragon on his farm",
-        "magical glyphs sell for 300 gold each"
-    ],
-    "hobbies": [
-        "lighting fireworks",
-        "exploring middle earth",
-        "casting magical spells"
-    ]
-}
+# API Keys
+OPENAI_API_KEY=""
+LEONARDO_AI_API_KEY=""
+LEONARDO_AI_USER_ID=""
 ```
 
 ## License
