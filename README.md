@@ -46,7 +46,6 @@ streamlit run app.py
 ```
 
 ## Sample Responses:
-![SampleOutputImage](https://i.postimg.cc/3JxCPCX6/ui2.png)
 ![SampleOutputImage2](https://i.postimg.cc/3Jk0XLCK/renders.png)
 
 ## Features
